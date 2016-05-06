@@ -1,0 +1,4 @@
+
+-- 下载dubbox并安装在本地
+git clone https://github.com/dangdangdotcom/dubbox.git
+mvn install -Dmaven.test.skip=true
