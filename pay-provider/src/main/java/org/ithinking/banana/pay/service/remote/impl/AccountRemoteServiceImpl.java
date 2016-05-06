@@ -1,16 +1,17 @@
 package org.ithinking.banana.pay.service.remote.impl;
 
-import com.alibaba.dubbo.config.annotation.Service;
 import org.ithinking.banana.pay.remote.service.AccountRemoteService;
 import org.ithinking.banana.pay.remote.vo.AccountVo;
+import org.springframework.stereotype.Service;
 
 /**
- * ${TITLE}
+ * 账号-远程服务实现
  *
  * @author agan
  * @date 2016-05-07
  */
-@Service(registry = "pay", interfaceClass = AccountRemoteService.class)
+@Service
+@com.alibaba.dubbo.config.annotation.Service(registry = "pay", interfaceClass = AccountRemoteService.class)
 public class AccountRemoteServiceImpl implements AccountRemoteService {
 
     @Override
