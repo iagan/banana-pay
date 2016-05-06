@@ -34,7 +34,7 @@ public class MyBatisConfig implements TransactionManagementConfigurer {
     public SqlSessionFactory sqlSessionFactoryBean() {
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
         bean.setDataSource(dataSource);
-        bean.setTypeAliasesPackage("org.ithinking.banana.ishow.model");
+        bean.setTypeAliasesPackage("org.ithinking.banana.pay.model");
 
         // SqlSessionFactory 配置
         org.apache.ibatis.session.Configuration configuration = new org.apache.ibatis.session.Configuration();
