@@ -11,6 +11,7 @@
         <module>pay-service</module>
         <module>pay-remote</module>
         <module>pay-model</module>
+        <module>pay-provider</module>
     </modules>
 
     <packaging>pom</packaging>
