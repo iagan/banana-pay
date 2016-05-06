@@ -12,11 +12,15 @@
     <artifactId>pay-provider</artifactId>
 
     <dependencies>
+
+        <!-- model -->
         <dependency>
             <groupId>org.ithinking</groupId>
             <artifactId>pay-remote</artifactId>
             <version>${project.version}</version>
         </dependency>
+
+
         <!-- Spring -->
         <dependency>
             <groupId>org.springframework</groupId>
@@ -44,14 +48,15 @@
             <artifactId>spring-expression</artifactId>
             <version>${spring.version}</version>
         </dependency>
+
+
+        <!-- Spring boot -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <version>${spring.boot.version}</version>
             <scope>test</scope>
         </dependency>
-
-        <!-- Spring boot -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
