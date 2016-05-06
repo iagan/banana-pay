@@ -12,7 +12,7 @@ import org.springframework.context.annotation.ComponentScan;
  * @date 2016-05-07
  */
 @SpringBootApplication
-@ComponentScan(basePackages = "org.ithinking.banana")
+@ComponentScan(basePackages = "org.ithinking.banana.pay")
 @EnableAutoConfiguration
 public class Application {
     public static void main(String[] args) {
