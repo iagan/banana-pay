@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
  * @date 2016-05-07
  */
 @Service
-@com.alibaba.dubbo.config.annotation.Service(registry = Constant.DUBBO_REGISTRY, interfaceClass = AccountRemoteService.class)
+@com.alibaba.dubbo.config.annotation.Service( interfaceClass = AccountRemoteService.class)
 public class AccountRemoteServiceImpl implements AccountRemoteService {
 
     @Override
