@@ -11,5 +11,12 @@
 
     <artifactId>pay-provider</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>dubbo</artifactId>
+            <version>${dubbo.version}</version>
+        </dependency>
+    </dependencies>
 
 </project>
