@@ -13,7 +13,7 @@
     <!--<dubbo:monitor protocol="registry"/>-->
 
     <!-- here we demonstrate both annotation-based and xml-based configs -->
-    <dubbo:annotation package="com.alibaba.dubbo.demo.user.facade" />
+    <dubbo:annotation package="org.ithinking.banana.pay.service.remote.impl" />
 
     <dubbo:protocol name="dubbo" serialization="kryo" optimizer="com.alibaba.dubbo.demo.SerializationOptimizerImpl"/>
     <!--<dubbo:protocol name="dubbo" serialization="fst" optimizer="com.alibaba.dubbo.demo.SerializationOptimizerImpl"/>-->
