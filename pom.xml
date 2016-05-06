@@ -7,7 +7,12 @@
     <groupId>org.ithinking</groupId>
     <artifactId>banana-pay</artifactId>
     <version>1.0-SNAPSHOT</version>
-    
+    <modules>
+        <module>pay-service</module>
+        <module>pay-remote-service</module>
+        <module>pay-model</module>
+    </modules>
+
     <packaging>pom</packaging>
 
     <properties>
