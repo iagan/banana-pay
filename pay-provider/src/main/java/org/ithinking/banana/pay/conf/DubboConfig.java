@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
  * @author agan
  * @date 2016-05-07
  */
-@Configuration
+//@Configuration
 public class DubboConfig {
     /**
     <!-- 公共信息，也可以用dubbo.properties配置 -->
