@@ -24,6 +24,11 @@
             <artifactId>pay-service</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.ithinking</groupId>
+            <artifactId>pay-comm</artifactId>
+            <version>${project.version}</version>
+        </dependency>
 
 
         <!-- Spring -->

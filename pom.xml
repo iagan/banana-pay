@@ -13,6 +13,7 @@
         <module>pay-model</module>
         <module>pay-provider</module>
         <module>pay-comm</module>
+        <module>pay-mapper</module>
     </modules>
 
     <packaging>pom</packaging>

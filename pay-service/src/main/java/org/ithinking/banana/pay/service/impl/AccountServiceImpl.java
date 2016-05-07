@@ -1,7 +1,13 @@
 package org.ithinking.banana.pay.service.impl;
 
+import org.ithinking.banana.comm.IdWorker;
+import org.ithinking.banana.pay.mapper.AccountMapper;
 import org.ithinking.banana.pay.model.entity.Account;
 import org.ithinking.banana.pay.service.AccountService;
+
+import javax.annotation.Resource;
+import java.util.Date;
+import java.util.List;
 
 /**
  * ${TITLE}
@@ -9,11 +15,39 @@ import org.ithinking.banana.pay.service.AccountService;
  * @author agan
  * @date 2016-05-07
  */
-public class AccountServiceImpl implements AccountService{
+public class AccountServiceImpl implements AccountService {
+
+    @Resource
+    private AccountMapper accountMapper;
+
+    @Resource(type = IdWorker.class)
+    private IdWorker idWorker;
 
     @Override
-    public Account getAccount(Long accountNo) {
+    public Account createAccount(Long ownerId) {
+
         Account account = new Account();
+
+        account.setAccountId(idWorker.nextId());
+        account.setOwnerId(ownerId);
+        account.setVersion(1);
+        account.setBalance(0L);
+        account.setBlocked(false);
+        account.setCreateTime(new Date());
+        account.setLastUpdateTime(account.getCreateTime());
+
+        accountMapper.addAcount(account);
         return account;
+    }
+
+    @Override
+    public Account getAccount(Long accountId) {
+        Account account = accountMapper.getAccountById(accountId);
+        return account;
+    }
+
+    @Override
+    public List<Account> getAccountByOwnerId(Long ownerId) {
+        return accountMapper.getAccountByOwnerId(ownerId);
     }
 }
