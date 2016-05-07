@@ -25,9 +25,9 @@ public class AccountServiceTest {
     @Test
     public void testCreateAccount(){
         Long ownerId = 1111111L;
-        Account account = accountService.getAccount(ownerId);
-        if(account == null){
-            account = accountService.createAccount(ownerId);
+        boolean has = accountService.hasAccountOf(ownerId);
+        if(!has){
+            Account account = accountService.createAccount(ownerId);
             Assert.assertNotNull(account);
         }
     }

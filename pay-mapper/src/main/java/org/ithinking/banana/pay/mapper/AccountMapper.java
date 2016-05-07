@@ -41,4 +41,20 @@ public interface AccountMapper {
      */
     List<Account> getAccountByOwnerId(Long ownerId);
 
+    /**
+     * 是否存在指定的账号
+     *
+     * @param accountId
+     * @return
+     */
+    int existsAccount(Long accountId);
+
+    /**
+     * 判断用户是否有账号
+     *
+     * @param ownerId
+     * @return
+     */
+    int hasAccountOf(Long ownerId);
+
 }

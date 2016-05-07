@@ -53,4 +53,16 @@ public class AccountServiceImpl implements AccountService {
     public List<Account> getAccountByOwnerId(Long ownerId) {
         return accountMapper.getAccountByOwnerId(ownerId);
     }
+
+    @Override
+    public boolean existsAccount(Long accountId) {
+        int n = accountMapper.existsAccount(accountId);
+        return n > 0;
+    }
+
+    @Override
+    public boolean hasAccountOf(Long ownerId) {
+        int n = accountMapper.hasAccountOf(ownerId);
+        return n > 0;
+    }
 }

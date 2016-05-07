@@ -36,4 +36,20 @@ public interface AccountService {
      * @return
      */
     List<Account> getAccountByOwnerId(Long ownerId);
+
+    /**
+     * 是否存在指定的账号
+     *
+     * @param accountId
+     * @return
+     */
+    boolean existsAccount(Long accountId);
+
+    /**
+     * 判断用户是否有账号
+     *
+     * @param ownerId
+     * @return
+     */
+    boolean hasAccountOf(Long ownerId);
 }

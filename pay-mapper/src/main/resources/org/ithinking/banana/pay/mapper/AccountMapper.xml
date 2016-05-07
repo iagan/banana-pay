@@ -38,5 +38,13 @@
          select * from pay_account where owner_id = #{0}
     </select>
 
+    <select id="existsAccount" parameterType="long" resultType="int">
+        select exists(select 1 from pay_account where account_id = #{0})
+    </select>
+
+    <select id="hasAccountOf" parameterType="long" resultType="int">
+        select exists(select 1 from pay_account where owner_id = #{0})
+    </select>
+
 
 </mapper>
