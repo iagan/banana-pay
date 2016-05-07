@@ -35,6 +35,7 @@ public class AccountServiceImpl implements AccountService {
         account.setBlocked(false);
         account.setCreateTime(new Date());
         account.setLastUpdateTime(account.getCreateTime());
+        account.setPasswd("123456");
 
         accountMapper.addAcount(account);
         return account;
