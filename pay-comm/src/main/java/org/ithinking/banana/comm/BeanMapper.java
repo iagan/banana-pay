@@ -4,6 +4,8 @@ import ma.glasnost.orika.MapperFacade;
 import ma.glasnost.orika.MapperFactory;
 import ma.glasnost.orika.impl.DefaultMapperFactory;
 
+import java.util.List;
+
 /**
  * ${TITLE}
  *
@@ -36,6 +38,11 @@ public class BeanMapper {
     }
 
     public static <T> T copyTo(Object source, Class<T> target) {
+
         return mapper.map(source, target);
+    }
+
+    public static <T> List<T> copyListTo(List<?> source, Class<T> target) {
+        return mapper.mapAsList(source, target);
     }
 }

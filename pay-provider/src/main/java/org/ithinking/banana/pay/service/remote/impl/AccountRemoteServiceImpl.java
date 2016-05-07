@@ -28,7 +28,7 @@ public class AccountRemoteServiceImpl implements AccountRemoteService {
     public AccountVo createAccount(Long ownerId) {
         Account account = accountService.createAccount(ownerId);
         AccountVo accountVo = null;
-        if(accountVo != null){
+        if (accountVo != null) {
             accountVo = BeanMapper.copyTo(account, AccountVo.class);
         }
         return accountVo;
@@ -38,15 +38,19 @@ public class AccountRemoteServiceImpl implements AccountRemoteService {
     public AccountVo getAccount(Long accountId) {
         Account account = accountService.getAccount(accountId);
         AccountVo accountVo = null;
-        if (account != null) {
-            accountVo = new AccountVo();
+        if (accountVo != null) {
+            accountVo = BeanMapper.copyTo(account, AccountVo.class);
         }
         return accountVo;
     }
 
     @Override
     public List<AccountVo> getAccountByOwnerId(Long ownerId) {
-        accountService.getAccountByOwnerId(ownerId);
-        return null;
+        List<Account> accountList = accountService.getAccountByOwnerId(ownerId);
+        List<AccountVo> resultList = null;
+        if (accountList != null && !accountList.isEmpty()) {
+            resultList = BeanMapper.copyListTo(accountList, AccountVo.class);
+        }
+        return resultList;
     }
 }
