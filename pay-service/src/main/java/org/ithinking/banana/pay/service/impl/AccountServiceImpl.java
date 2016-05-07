@@ -4,6 +4,7 @@ import org.ithinking.banana.comm.IdWorker;
 import org.ithinking.banana.pay.mapper.AccountMapper;
 import org.ithinking.banana.pay.model.entity.Account;
 import org.ithinking.banana.pay.service.AccountService;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.Date;
@@ -15,6 +16,7 @@ import java.util.List;
  * @author agan
  * @date 2016-05-07
  */
+@Service
 public class AccountServiceImpl implements AccountService {
 
     @Resource
