@@ -11,5 +11,13 @@
 
     <artifactId>pay-service</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.ithinking</groupId>
+            <artifactId>pay-model</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
+
 
 </project>

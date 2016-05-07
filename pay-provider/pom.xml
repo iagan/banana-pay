@@ -19,6 +19,11 @@
             <artifactId>pay-remote</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.ithinking</groupId>
+            <artifactId>pay-service</artifactId>
+            <version>${project.version}</version>
+        </dependency>
 
 
         <!-- Spring -->
