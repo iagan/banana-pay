@@ -3,8 +3,9 @@ package org.ithinking.banana.pay.service.remote.impl;
 import org.ithinking.banana.comm.BeanMapper;
 import org.ithinking.banana.pay.Constant;
 import org.ithinking.banana.pay.model.entity.Account;
-import org.ithinking.banana.pay.service.remote.AccountRemoteService;
 import org.ithinking.banana.pay.service.AccountService;
+import org.ithinking.banana.pay.service.remote.AccountRemoteService;
+import org.ithinking.banana.pay.service.remote.dto.AccountDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,31 +25,31 @@ public class AccountRemoteServiceImpl implements AccountRemoteService {
     private AccountService accountService;
 
     @Override
-    public AccountVo createAccount(Long ownerId) {
+    public AccountDTO createAccount(Long ownerId) {
         Account account = accountService.createAccount(ownerId);
-        AccountVo accountVo = null;
-        if (accountVo != null) {
-            accountVo = BeanMapper.copyTo(account, AccountVo.class);
+        AccountDTO AccountDTO = null;
+        if (AccountDTO != null) {
+            AccountDTO = BeanMapper.copyTo(account, AccountDTO.class);
         }
-        return accountVo;
+        return AccountDTO;
     }
 
     @Override
-    public AccountVo getAccount(Long accountId) {
+    public AccountDTO getAccount(Long accountId) {
         Account account = accountService.getAccount(accountId);
-        AccountVo accountVo = null;
-        if (accountVo != null) {
-            accountVo = BeanMapper.copyTo(account, AccountVo.class);
+        AccountDTO AccountDTO = null;
+        if (AccountDTO != null) {
+            AccountDTO = BeanMapper.copyTo(account, AccountDTO.class);
         }
-        return accountVo;
+        return AccountDTO;
     }
 
     @Override
-    public List<AccountVo> getAccountByOwnerId(Long ownerId) {
+    public List<AccountDTO> getAccountByOwnerId(Long ownerId) {
         List<Account> accountList = accountService.getAccountByOwnerId(ownerId);
-        List<AccountVo> resultList = null;
+        List<AccountDTO> resultList = null;
         if (accountList != null && !accountList.isEmpty()) {
-            resultList = BeanMapper.copyListTo(accountList, AccountVo.class);
+            resultList = BeanMapper.copyListTo(accountList, AccountDTO.class);
         }
         return resultList;
     }
