@@ -19,8 +19,8 @@
     * @return
     -->
     <insert id="addAcount" parameterType="Account">
-        INSERT INTO pay_account(account_id,owner_id, balance,create_time,last_update_time,version)
-        VALUES (#{accountId},#{ownerId}, #{balance},#{createTime},#{lastUpdateTime},#{version});
+        INSERT INTO pay_account(account_id,owner_id, balance, passwd, create_time, last_update_time, version)
+        VALUES (#{accountId},#{ownerId}, #{balance},#{passwd},#{createTime},#{lastUpdateTime},#{version});
     </insert>
 
     <!--
