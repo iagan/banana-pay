@@ -12,6 +12,7 @@
         <module>pay-remote</module>
         <module>pay-model</module>
         <module>pay-provider</module>
+        <module>pay-comm</module>
     </modules>
 
     <packaging>pom</packaging>
@@ -187,6 +188,13 @@
                 <groupId>com.101tec</groupId>
                 <artifactId>zkclient</artifactId>
                 <version>${zkclient.version}</version>
+            </dependency>
+
+            <!-- Bean 复制框架 -->
+            <dependency>
+                <groupId>ma.glasnost.orika</groupId>
+                <artifactId>orika-core</artifactId>
+                <version>1.4.6</version>
             </dependency>
 
         </dependencies>

@@ -9,18 +9,12 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>pay-service</artifactId>
+    <artifactId>pay-comm</artifactId>
 
     <dependencies>
         <dependency>
-            <groupId>org.ithinking</groupId>
-            <artifactId>pay-comm</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.ithinking</groupId>
-            <artifactId>pay-model</artifactId>
-            <version>${project.version}</version>
+            <groupId>ma.glasnost.orika</groupId>
+            <artifactId>orika-core</artifactId>
         </dependency>
     </dependencies>
 

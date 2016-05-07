@@ -1,5 +1,6 @@
 package org.ithinking.banana.pay.service.remote.impl;
 
+import org.ithinking.banana.comm.BeanMapper;
 import org.ithinking.banana.pay.Constant;
 import org.ithinking.banana.pay.model.entity.Account;
 import org.ithinking.banana.pay.remote.service.AccountRemoteService;
@@ -26,7 +27,11 @@ public class AccountRemoteServiceImpl implements AccountRemoteService {
     @Override
     public AccountVo createAccount(Long ownerId) {
         Account account = accountService.createAccount(ownerId);
-        return null;
+        AccountVo accountVo = null;
+        if(accountVo != null){
+            accountVo = BeanMapper.copyTo(account, AccountVo.class);
+        }
+        return accountVo;
     }
 
     @Override
