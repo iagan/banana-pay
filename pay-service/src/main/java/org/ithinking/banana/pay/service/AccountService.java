@@ -26,7 +26,7 @@ public interface AccountService {
      * @param accountId
      * @return
      */
-    Account getAccount(Long accountId);
+    Account getAccountById(Long accountId);
 
 
     /**
