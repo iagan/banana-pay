@@ -23,6 +23,8 @@ public class Account {
     private Long balance;
     // 账号冻结标志
     private Boolean blocked;
+    // 账户操作密码(转账,支付时验证)
+    private String passwd;
     // 创建时间
     private Date createTime;
     // 更新时间
@@ -65,6 +67,15 @@ public class Account {
 
     public void setBlocked(Boolean blocked) {
         this.blocked = blocked;
+    }
+
+    @Column(name = "passwd")
+    public String getPasswd() {
+        return passwd;
+    }
+
+    public void setPasswd(String passwd) {
+        this.passwd = passwd;
     }
 
     @Column(name = "create_time", nullable = false)
