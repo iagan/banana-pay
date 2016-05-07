@@ -9,6 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.util.Date;
+import java.util.List;
+import java.util.Random;
+
 /**
  * ${TITLE}
  *
@@ -22,13 +26,26 @@ public class AccountServiceTest {
     @Autowired
     private AccountService accountService;
 
+    private Long ownerId = 1111111L;
+
     @Test
-    public void testCreateAccount(){
-        Long ownerId = 1111111L;
+    public void testCreateAccount() {
         boolean has = accountService.hasAccountOf(ownerId);
-        if(!has){
+        if (!has) {
             Account account = accountService.createAccount(ownerId);
             Assert.assertNotNull(account);
+        }
+    }
+
+    @Test
+    public void testU() {
+        List<Account> accountList = accountService.getAccountByOwnerId(ownerId);
+        Account account;
+        for (int i = 0, size = accountList == null ? 0 : accountList.size(); i < size; i++) {
+            account = accountList.get(i);
+            account.setBalance((long) new Random().nextInt(1000));
+            account.setLastUpdateTime(new Date());
+            accountService.updateAccount(account);
         }
     }
 }

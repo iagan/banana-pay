@@ -29,8 +29,13 @@
     * @param account
     * @return
     -->
-    <update id="saveAccount" parameterType="Account">
+    <update id="updateAccount" parameterType="Account">
         UPDATE pay_account set balance = #{balance},last_update_time = #{lastUpdateTime}, version = version + 1 where account_id = ${accountId} and version = ${version}
+    </update>
+
+    <!-- 更新账户余额 -->
+    <update id="updateBalance">
+         UPDATE pay_account set balance = #{balance},last_update_time = #{lastUpdateTime}, version = version + 1 where account_id = ${accountId} and version = ${version}
     </update>
 
     <!-- 获取开户人所有账号 -->

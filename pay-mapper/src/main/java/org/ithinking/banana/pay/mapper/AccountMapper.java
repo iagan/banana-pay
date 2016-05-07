@@ -31,7 +31,15 @@ public interface AccountMapper {
      * @param account
      * @return
      */
-    int saveAccount(Account account);
+    int updateAccount(Account account);
+
+    /**
+     * 更新账号余额
+     *
+     * @param account
+     * @return
+     */
+    int updateBalance(Account account);
 
     /**
      * 获取开户人所有账号

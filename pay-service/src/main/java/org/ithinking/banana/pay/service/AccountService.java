@@ -28,6 +28,23 @@ public interface AccountService {
      */
     Account getAccountById(Long accountId);
 
+    /**
+     * 保存
+     *
+     * @param account
+     * @return
+     */
+    boolean updateAccount(Account account);
+
+
+    /**
+     * 更新账户余额
+     *
+     * @param account
+     * @return
+     */
+    boolean updateBalance(Account account);
+
 
     /**
      * 获取某人的账号信息列表
