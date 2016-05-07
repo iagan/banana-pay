@@ -1,4 +1,4 @@
-package org.ithinking.banana.pay.remote.vo;
+package org.ithinking.banana.pay.service.remote.dto;
 
 import java.util.Date;
 
@@ -8,7 +8,7 @@ import java.util.Date;
  * @author agan
  * @date 2016-05-07
  */
-public class AccountVo {
+public class AccountDTO {
     // 账号ID
     private Long accountId;
     // 开户人ID

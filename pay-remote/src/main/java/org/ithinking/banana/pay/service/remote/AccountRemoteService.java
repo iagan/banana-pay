@@ -1,6 +1,6 @@
-package org.ithinking.banana.pay.remote.service;
+package org.ithinking.banana.pay.service.remote;
 
-import org.ithinking.banana.pay.remote.vo.AccountVo;
+import org.ithinking.banana.pay.service.remote.dto.AccountDTO;
 
 import java.util.List;
 
@@ -18,7 +18,7 @@ public interface AccountRemoteService {
      * @param ownerId
      * @return
      */
-    AccountVo createAccount(Long ownerId);
+    AccountDTO createAccount(Long ownerId);
 
     /**
      * 根据账号获取账号信息
@@ -26,7 +26,7 @@ public interface AccountRemoteService {
      * @param accountNO
      * @return
      */
-    AccountVo getAccount(Long accountNO);
+    AccountDTO getAccount(Long accountNO);
 
 
     /**
@@ -35,5 +35,5 @@ public interface AccountRemoteService {
      * @param ownerId
      * @return
      */
-    List<AccountVo> getAccountByOwnerId(Long ownerId);
+    List<AccountDTO> getAccountByOwnerId(Long ownerId);
 }
