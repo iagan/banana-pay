@@ -162,6 +162,26 @@
                 </exclusions>
             </dependency>
 
+            <!-- Kyro序列化 -->
+            <dependency>
+                <groupId>com.esotericsoftware.kryo</groupId>
+                <artifactId>kryo</artifactId>
+                <version>2.24.0</version>
+            </dependency>
+            <dependency>
+                <groupId>de.javakaffee</groupId>
+                <artifactId>kryo-serializers</artifactId>
+                <version>0.37</version>
+            </dependency>
+
+            <!-- FST序列化 -->
+            <dependency>
+                <groupId>de.ruedigermoeller</groupId>
+                <artifactId>fst</artifactId>
+                <version>1.55</version>
+            </dependency>
+
+
             <!-- zkclient -->
             <dependency>
                 <groupId>com.101tec</groupId>
