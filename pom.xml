@@ -197,6 +197,13 @@
                 <version>1.4.6</version>
             </dependency>
 
+            <!-- persistence-api -->
+            <dependency>
+                <groupId>javax.persistence</groupId>
+                <artifactId>persistence-api</artifactId>
+                <version>1.0</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
