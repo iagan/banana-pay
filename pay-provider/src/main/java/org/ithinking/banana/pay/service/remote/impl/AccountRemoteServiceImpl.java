@@ -8,6 +8,8 @@ import org.ithinking.banana.pay.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * 账号-远程服务实现
  *
@@ -22,12 +24,24 @@ public class AccountRemoteServiceImpl implements AccountRemoteService {
     private AccountService accountService;
 
     @Override
-    public AccountVo getAccount(Long accountNO) {
-        Account account = accountService.getAccount(accountNO);
+    public AccountVo createAccount(Long ownerId) {
+        Account account = accountService.createAccount(ownerId);
+        return null;
+    }
+
+    @Override
+    public AccountVo getAccount(Long accountId) {
+        Account account = accountService.getAccount(accountId);
         AccountVo accountVo = null;
-        if(account != null){
+        if (account != null) {
             accountVo = new AccountVo();
         }
         return accountVo;
+    }
+
+    @Override
+    public List<AccountVo> getAccountByOwnerId(Long ownerId) {
+        accountService.getAccountByOwnerId(ownerId);
+        return null;
     }
 }

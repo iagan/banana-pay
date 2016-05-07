@@ -7,16 +7,16 @@ package org.ithinking.banana.pay.model.entity;
  * @date 2016-05-07
  */
 public class Account {
-    private Long accountNO;
+    private Long accountId;
     private Long ownerId;
     private Long ammount;
 
-    public Long getAccountNO() {
-        return accountNO;
+    public Long getAccountId() {
+        return accountId;
     }
 
-    public void setAccountNO(Long accountNO) {
-        this.accountNO = accountNO;
+    public void setAccountId(Long accountId) {
+        this.accountId = accountId;
     }
 
     public Long getOwnerId() {
