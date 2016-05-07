@@ -36,7 +36,7 @@ public class AccountRemoteServiceImpl implements AccountRemoteService {
 
     @Override
     public AccountDTO getAccount(Long accountId) {
-        Account account = accountService.getAccount(accountId);
+        Account account = accountService.getAccountById(accountId);
         AccountDTO AccountDTO = null;
         if (AccountDTO != null) {
             AccountDTO = BeanMapper.copyTo(account, AccountDTO.class);

@@ -38,14 +38,28 @@ public class AccountServiceTest {
     }
 
     @Test
-    public void testU() {
+    public void testUpdateAccount() {
         List<Account> accountList = accountService.getAccountByOwnerId(ownerId);
         Account account;
         for (int i = 0, size = accountList == null ? 0 : accountList.size(); i < size; i++) {
             account = accountList.get(i);
             account.setBalance((long) new Random().nextInt(1000));
             account.setLastUpdateTime(new Date());
-            accountService.updateAccount(account);
+            boolean ok = accountService.updateAccount(account);
+            Assert.assertEquals(true, ok);
+        }
+    }
+
+    @Test
+    public void testUpdateBalance() {
+        List<Account> accountList = accountService.getAccountByOwnerId(ownerId);
+        Account account;
+        for (int i = 0, size = accountList == null ? 0 : accountList.size(); i < size; i++) {
+            account = accountList.get(i);
+            account.setBalance((long) new Random().nextInt(1000));
+            account.setLastUpdateTime(new Date());
+            boolean ok = accountService.updateBalance(account);
+            Assert.assertEquals(true, ok);
         }
     }
 }
