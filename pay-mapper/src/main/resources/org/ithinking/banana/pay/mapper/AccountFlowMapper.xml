@@ -4,52 +4,23 @@
 <mapper namespace="org.ithinking.banana.pay.mapper.AccountFlowMapper">
 
     <!--
-    * 根据账号获取账号信息
-    * @param accountId
+    * 根据流水ID获取账号流水信息
+    * @param accountFlowId
     * @return
     -->
-    <select id="getAccountById" parameterType="long" resultType="Account">
-        select * from pay_account where account_id = #{0}
+    <select id="getAccountFlowById" parameterType="long" resultType="AccountFlow">
+        select * from pay_account_flow where flow_id = #{0}
     </select>
 
 
     <!--
-    * 新增账号信息
-    * @param account
+    * 新增账号流水信息
+    * @param AccountFlow
     * @return
     -->
-    <insert id="addAcount" parameterType="Account">
-        INSERT INTO pay_account(account_id,owner_id, balance, passwd, create_time, last_update_time, version)
-        VALUES (#{accountId},#{ownerId}, #{balance},#{passwd},#{createTime},#{lastUpdateTime},#{version});
+    <insert id="addAccountFlow" parameterType="AccountFlow">
+        INSERT INTO pay_account_flow(flow_id,account_id, from_account_id, amount, balance, remark, create_time)
+        VALUES (#{flowId},#{accountId}, #{fromAccountId},#{amount},#{balance},#{remark},#{createTime});
     </insert>
-
-    <!--
-    * 保存账号信息
-    * 注意：account_id,owner_id 一旦创建则不可更新
-    * @param account
-    * @return
-    -->
-    <update id="updateAccount" parameterType="Account">
-        UPDATE pay_account set balance = #{balance},last_update_time = #{lastUpdateTime}, version = version + 1 where account_id = ${accountId} and version = ${version}
-    </update>
-
-    <!-- 更新账户余额 -->
-    <update id="updateBalance">
-        UPDATE pay_account set balance = #{balance},last_update_time = #{lastUpdateTime}, version = version + 1 where account_id = ${accountId} and version = ${version}
-    </update>
-
-    <!-- 获取开户人所有账号 -->
-    <select id="getAccountByOwnerId" parameterType="long" resultType="Account">
-        select * from pay_account where owner_id = #{0}
-    </select>
-
-    <select id="existsAccount" parameterType="long" resultType="int">
-        select exists(select 1 from pay_account where account_id = #{0})
-    </select>
-
-    <select id="hasAccountOf" parameterType="long" resultType="int">
-        select exists(select 1 from pay_account where owner_id = #{0})
-    </select>
-
 
 </mapper>
