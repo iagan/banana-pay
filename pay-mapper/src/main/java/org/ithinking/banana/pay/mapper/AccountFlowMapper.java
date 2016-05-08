@@ -24,4 +24,12 @@ public interface AccountFlowMapper {
      * @return
      */
     AccountFlow getAccountFlowById(Long flowId);
+
+    /**
+     * 是否存在指定流水信息
+     *
+     * @param flowId
+     * @return 0: 不存在指定流水信息，否则存在
+     */
+    int existsAccountFlow(Long flowId);
 }

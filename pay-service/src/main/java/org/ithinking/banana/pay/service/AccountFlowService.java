@@ -26,4 +26,12 @@ public interface AccountFlowService {
      */
     AccountFlow getAccountFlowById(Long flowId);
 
+    /**
+     * 是否存在指定流水Id的记录
+     *
+     * @param flowId
+     * @return
+     */
+    boolean existsAccountFlow(Long flowId);
+
 }

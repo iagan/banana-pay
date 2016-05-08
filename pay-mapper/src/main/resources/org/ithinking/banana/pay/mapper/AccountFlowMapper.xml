@@ -23,4 +23,9 @@
         VALUES (#{flowId},#{accountId}, #{fromAccountId},#{amount},#{balance},#{remark},#{createTime});
     </insert>
 
+    <!-- 是否存在指定的流水信息 -->
+    <select id="existsAccountFlow" parameterType="long" resultType="int">
+        select EXISTS(select 1 from pay_account_flow where flow_id = #{0})
+    </select>
+
 </mapper>

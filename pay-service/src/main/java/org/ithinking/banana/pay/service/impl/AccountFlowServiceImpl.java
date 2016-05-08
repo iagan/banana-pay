@@ -29,4 +29,10 @@ public class AccountFlowServiceImpl implements AccountFlowService {
         AccountFlow accountFlow = accountFlowMapper.getAccountFlowById(flowId);
         return accountFlow;
     }
+
+    @Override
+    public boolean existsAccountFlow(Long flowId) {
+        int count = accountFlowMapper.existsAccountFlow(flowId);
+        return count > 0;
+    }
 }

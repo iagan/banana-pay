@@ -27,30 +27,34 @@ public class AccountFlowServiceTest {
     @Resource
     private IdWorker idWorker;
 
-    private Long flowById = 1111111L;
+    private Long flowId = 1111111L;
     private Long ownerId = 1111111L;
     private Long accountId = 1111111L;
     private String fromAccountId = "222222";
 
     @Test
     public void testGetAccountFlowById() {
-        AccountFlow accountFlow = accountFlowService.getAccountFlowById(flowById);
+        AccountFlow accountFlow = accountFlowService.getAccountFlowById(flowId);
         System.out.println(accountFlow);
     }
 
     @Test
     public void testAddAccountFlow() {
-        AccountFlow accountFlow = new AccountFlow();
 
-        accountFlow.setFlowId(idWorker.nextId());
-        accountFlow.setAccountId(accountId);
-        accountFlow.setAmount(new Random().nextLong());
-        accountFlow.setBalance(new Random().nextLong());
-        accountFlow.setFromAccountId(fromAccountId);
-        accountFlow.setRemark("测试");
-        accountFlow.setCreateTime(new Date());
+        boolean exists = accountFlowService.existsAccountFlow(flowId);
+        if (!exists) {
+            AccountFlow accountFlow = new AccountFlow();
+            //
+            accountFlow.setFlowId(flowId);
+            accountFlow.setAccountId(accountId);
+            accountFlow.setAmount(new Random().nextLong());
+            accountFlow.setBalance(new Random().nextLong());
+            accountFlow.setFromAccountId(fromAccountId);
+            accountFlow.setRemark("测试");
+            accountFlow.setCreateTime(new Date());
 
-        accountFlowService.addAccountFlow(accountFlow);
+            accountFlowService.addAccountFlow(accountFlow);
+        }
         System.out.println("addAccountFlow OK!");
     }
 }
