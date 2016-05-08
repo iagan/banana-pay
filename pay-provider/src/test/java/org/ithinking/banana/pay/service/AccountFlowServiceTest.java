@@ -3,7 +3,6 @@ package org.ithinking.banana.pay.service;
 import org.ithinking.banana.comm.IdWorker;
 import org.ithinking.banana.pay.Application;
 import org.ithinking.banana.pay.model.entity.AccountFlow;
-import org.ithinking.banana.pay.service.impl.AccountFlowServiceImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.SpringApplicationConfiguration;
