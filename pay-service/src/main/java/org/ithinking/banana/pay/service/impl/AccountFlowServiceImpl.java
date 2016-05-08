@@ -1,5 +1,6 @@
 package org.ithinking.banana.pay.service.impl;
 
+import org.ithinking.banana.pay.model.entity.AccountFlow;
 import org.ithinking.banana.pay.service.AccountFlowService;
 
 /**
@@ -10,4 +11,13 @@ import org.ithinking.banana.pay.service.AccountFlowService;
  */
 public class AccountFlowServiceImpl implements AccountFlowService{
 
+    @Override
+    public void addAccountFlow(AccountFlow accountFlow) {
+
+    }
+
+    @Override
+    public AccountFlow getAccountFlowById(Long flowId) {
+        return null;
+    }
 }

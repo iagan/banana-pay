@@ -20,7 +20,7 @@ public class AccountFlow {
     // 账号ID
     private Long accountId;
     // 转入/转出来源账号
-    private Long fromAccountId;
+    private String fromAccountId;
     // 转入/转出金额(交易金额)
     private Long amount;
     // 转入/转后账号余额(以分为单位)
@@ -50,11 +50,11 @@ public class AccountFlow {
     }
 
     @Column(name = "from_account_id", nullable = false)
-    public Long getFromAccountId() {
+    public String getFromAccountId() {
         return fromAccountId;
     }
 
-    public void setFromAccountId(Long fromAccountId) {
+    public void setFromAccountId(String fromAccountId) {
         this.fromAccountId = fromAccountId;
     }
 
